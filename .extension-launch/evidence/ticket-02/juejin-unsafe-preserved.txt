@@ -1,0 +1,12 @@
+uid=18_0 RootWebArea url="https://link.juejin.cn/?target=javascript%3Aalert%281%29"
+  uid=18_1 ignored
+    uid=18_2 ignored
+      uid=18_3 heading "Access Denied" level="1"
+        uid=18_4 StaticText "Access Denied"
+          uid=18_5 InlineTextBox "Access Denied"
+      uid=18_6 paragraph
+        uid=18_7 StaticText "X-TT-System-Error: 3"
+          uid=18_5 InlineTextBox "X-TT-System-Error: 3"
+      uid=18_8 paragraph
+        uid=18_9 StaticText "Oncall Product ID: 783"
+          uid=18_5 InlineTextBox "Oncall Product ID: 783"

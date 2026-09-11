@@ -22,3 +22,5 @@
 - Initial review: `docs/reviews/ticket-01-initial.md`; all hard/spec findings corrected.
 - TDD: `node --experimental-strip-types --test tests/settings.test.ts` — 3/3 passed.
 - Production build: WXT 0.20.11 on Node 24.19.0.
+- Correction recheck: ticket 02 candidate native-action reopen shows master off with `已暂停全部直达`; `.extension-launch/evidence/ticket-02/popup-reopened-paused.txt`.
+- Correction review: `docs/reviews/ticket-01-correction.md`; both remaining findings resolved.

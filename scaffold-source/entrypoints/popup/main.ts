@@ -2,7 +2,7 @@ import './style.css';
 import { PLATFORM_IDS, type ExtensionSettings } from '@/lib/settings';
 import { loadSettings, saveSettings } from '@/lib/settings-storage';
 
-const settingIds = ['enabled', 'juejin', 'zhihu', 'csdn'] as const;
+const settingIds = ['enabled', ...PLATFORM_IDS] as const;
 const controls = Object.fromEntries(settingIds.map((id) => [id, requireCheckbox(id)])) as Record<(typeof settingIds)[number], HTMLInputElement>;
 const status = requireElement('status');
 let currentSettings: ExtensionSettings | undefined;
@@ -14,7 +14,7 @@ async function initialize(): Promise<void> {
   try {
     currentSettings = await loadSettings();
     render(currentSettings);
-    status.textContent = '已启用';
+    status.textContent = currentSettings.enabled ? '已启用' : '已暂停全部直达';
   } catch (error) {
     console.error('读取设置失败', error);
     status.textContent = '读取设置失败，请重新打开插件';

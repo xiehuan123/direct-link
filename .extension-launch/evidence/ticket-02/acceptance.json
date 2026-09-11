@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "fingerprint_sha256": "c00261638367f37597618458d2115cb15135464e5f19090bb0b9cf03d2fda5f6",
+    "files": [
+      {"path":"assets/popup-DrKr06Qf.css","sha256":"75a44b86c8a717ce1ff1b5ccc05787e9bf2e1b7013ce936efb6b4a63d2c04067"},
+      {"path":"chunks/popup-VXmHwmBV.js","sha256":"4082475278bc2969ab1514d0714dc567774b2442bf9807f0cd51c2f37eb2ca00"},
+      {"path":"content-scripts/redirect.js","sha256":"68a11b8e56e28a67d26de28d893641e018103ccb2b241c65b8ae61a9e7125f01"},
+      {"path":"content-scripts/source.js","sha256":"3b49b39d94dd66941c36f4e5a988baa48ff4e1ce19046221a2998435314ed76b"},
+      {"path":"icon/128.png","sha256":"e74cb0f937897c972dbe670f05ea0f2d06a0ccb5b1409d2514df59a6a52c073e"},
+      {"path":"icon/16.png","sha256":"21bb190492f1c1539f07d80f0024f2357789a9834fa1685c2b1f4b84e7751bcb"},
+      {"path":"icon/32.png","sha256":"feb24b458a1ea5048ac5e9bf7588684c1f6e962a2b5a980370aa17d566d89bcb"},
+      {"path":"icon/48.png","sha256":"16c4536cdf562225aea82dd0003dbc531841f94cb4595f137e4ba09e694e552a"},
+      {"path":"icon/96.png","sha256":"c97f7ccc9e75c6446c8b66a192daff5b24fae527b1f308dc0d1da3ea24b99165"},
+      {"path":"manifest.json","sha256":"fe13708e5d4f1544c81617f112f2d8c28196eb9561001f4d20172592d8e5028e"},
+      {"path":"popup.html","sha256":"7a42cb90ad98cfb680d54be974c750f7c835c2505570868f62148f4b56562907"}
+    ]
+  },
+  "environment": {"automation_provider":"chrome-devtools-mcp","browser_name":"Headless Chrome","browser_version":"153.0.0.0","extension_id":"mmifahddlpjpgpeakmcdjgikmfdiokii","installation_type":"unpacked"},
+  "browser_choice": {"default_provider":"playwright-mcp","selected_provider":"chrome-devtools-mcp","reason":"用户已为隔离 CLI 明确选择具备真实安装、action 和页面操作能力的 Chrome DevTools MCP。","user_decision":{"status":"approved","evidence_path":"browser-choice-user-decision.md"}},
+  "required_scenarios": ["install","native_entry","primary_flow","reopen","toggle_boundary","safe_failure","source_rewrite"],
+  "scenarios": [
+    {"id":"install","required":true,"status":"passed","method":"real_browser_tool","steps":["安装冻结 ticket-02 目录","核对扩展 ID/版本","从 popup 读取 runtime manifest"],"expected":"当前 Juejin 候选以 unpacked MV3 启用。","actual":"外链直达 0.1.0 已启用，ID mmifahddlpjpgpeakmcdjgikmfdiokii，候选包含两个注册内容脚本。","artifactPaths":["runtime-environment.json","raw-browser-record.md"]},
+    {"id":"native_entry","required":true,"status":"passed","method":"real_browser_tool","entry_kind":"native_action","steps":["trigger_extension_action","等待并重新 list_pages","保存真实 popup 快照"],"expected":"工具栏 action 打开当前扩展设置。","actual":"action 打开 mmifahddlpjpgpeakmcdjgikmfdiokii/popup.html，开关从真实存储读取。","artifactPaths":["popup-before-disable.txt","raw-browser-record.md"]},
+    {"id":"primary_flow","required":true,"status":"passed","method":"real_browser_tool","steps":["导航到已核实 link.juejin.cn target URL","等待内容脚本与导航完成","核对工具返回的最终 URL"],"expected":"无需点击继续访问即到 example.com 指定路径。","actual":"最终 URL 为 https://example.com/direct-link-ticket-02?case=juejin。","artifactPaths":["juejin-direct.txt","juejin-direct.png","raw-browser-record.md"]},
+    {"id":"reopen","required":true,"status":"passed","method":"real_browser_tool","steps":["真实 popup 关闭 master","关闭 popup","再次 action 打开新 pageId","核对持久化开关与状态文案","恢复 master"],"expected":"重开保持 master 关闭并显示已暂停全部直达。","actual":"新 popup page 9 中 master 未选中、站点控件 disabled，状态显示已暂停全部直达。","artifactPaths":["popup-reopened-paused.txt","popup-reopened-paused.png","raw-browser-record.md"]},
+    {"id":"toggle_boundary","required":true,"status":"passed","method":"real_browser_tool","steps":["通过 popup 关闭 Juejin","关闭 popup 后访问有效中转 URL","观察最终 URL 与平台页面","重新打开 action 恢复 Juejin"],"expected":"Juejin 关闭时保留平台原行为。","actual":"最终 URL 留在 link.juejin.cn，中转页显示跳转提示-稀土掘金。","artifactPaths":["juejin-disabled.txt","juejin-disabled.png","popup-juejin-off-reopen.txt"]},
+    {"id":"safe_failure","required":true,"status":"passed","method":"real_browser_tool","steps":["保持 Juejin 开启","访问 target=javascript:alert(1) 的真实中转 URL","核对最终地址未变为恶意协议"],"expected":"恶意协议不自动导航并保留中转地址。","actual":"页面最终仍为 https://link.juejin.cn/?target=javascript%3Aalert%281%29。","artifactPaths":["juejin-unsafe-preserved.txt","juejin-unsafe-preserved.png","raw-browser-record.md"]},
+    {"id":"source_rewrite","required":true,"status":"passed","method":"real_browser_tool","steps":["打开真实掘金文章并读取目标锚点 href","关闭 Juejin 后重载并再次读取","恢复 Juejin 后重载并再次读取"],"expected":"开启时来源页锚点直达，关闭时保留 link.juejin.cn 包装。","actual":"开启时为 developer.chrome.com 直链；关闭时为 link.juejin.cn/?target=...；恢复后再次为直链。","artifactPaths":["juejin-source-anchors.json","juejin-source-disabled-anchors.json","juejin-source-enabled-anchors.json","raw-browser-record.md"]}
+  ]
+}

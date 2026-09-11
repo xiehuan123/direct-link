@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "gate_passed": true,
+  "candidate_fingerprint_sha256": "c00261638367f37597618458d2115cb15135464e5f19090bb0b9cf03d2fda5f6",
+  "required_scenarios": [
+    "install",
+    "native_entry",
+    "primary_flow",
+    "reopen",
+    "safe_failure",
+    "source_rewrite",
+    "toggle_boundary"
+  ],
+  "checked_artifacts": 16,
+  "state_updated": false,
+  "claims_authenticated": false,
+  "errors": [],
+  "message": "仅核对真实验收报告的完整性、证据可核查性和版本对应；不公证操作真实性，不修改项目状态。"
+}
