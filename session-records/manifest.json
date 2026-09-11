@@ -1,0 +1,37 @@
+{
+  "session_id": "01a090f0-77e0-7992-b491-fcb1755c3857",
+  "live_snapshot": false,
+  "updated_at": "2026-09-11T19:11:18.277502+00:00",
+  "user_messages": 3,
+  "assistant_messages": 40,
+  "tool_calls_in_native_history": 397,
+  "queued_messages": 0,
+  "native_files": [
+    {
+      "source": ".runtime/codex-home/sessions/2026/09/11/rollout-2026-09-11T22-47-53-01a090f0-77e0-7992-b491-fcb1755c3857.jsonl",
+      "archive": "raw/codex-native/main/rollout-2026-09-11T22-47-53-01a090f0-77e0-7992-b491-fcb1755c3857.jsonl",
+      "session_id": "01a090f0-77e0-7992-b491-fcb1755c3857",
+      "bytes": 5507929,
+      "sha256": "056f1a38278d7e03c864c82a19a354e3f588085222120613b0673157b5e4e895"
+    },
+    {
+      "source": ".runtime/codex-home/sessions/2026/09/11/rollout-2026-09-11T23-26-35-01a09113-e6b7-7bd1-907f-3705f2aa1c26.jsonl",
+      "archive": "raw/codex-native/development-subagents/rollout-2026-09-11T23-26-35-01a09113-e6b7-7bd1-907f-3705f2aa1c26.jsonl",
+      "session_id": "01a09113-e6b7-7bd1-907f-3705f2aa1c26",
+      "bytes": 2008385,
+      "sha256": "ed6576b8b04c260f2d4173a1b29da4f3ef90425a26d29602f7a5f9cf9b56ba9a"
+    },
+    {
+      "source": ".runtime/codex-home/sessions/2026/09/11/rollout-2026-09-11T23-26-51-01a09114-2320-7781-b5bd-9de2759c5af9.jsonl",
+      "archive": "raw/codex-native/development-subagents/rollout-2026-09-11T23-26-51-01a09114-2320-7781-b5bd-9de2759c5af9.jsonl",
+      "session_id": "01a09114-2320-7781-b5bd-9de2759c5af9",
+      "bytes": 2968965,
+      "sha256": "e7cee5a2dc4f358f8c68a86ebb2e8294307a4075fe8eb1260c71bdb57bbf9a64"
+    }
+  ],
+  "notes": [
+    "Native JSONL archives are byte copies at this snapshot time.",
+    "CLI combined stdout/stderr was credential-redacted by the runner.",
+    "Auth files and model-service configuration are not exported."
+  ]
+}
