@@ -21,16 +21,12 @@ export default defineContentScript({
       return;
     }
 
-    const rewrite = (anchor: HTMLAnchorElement): void => {
-      rewriter.apply(anchor, settings);
-    };
-
     const processBatch = async (anchors: readonly HTMLAnchorElement[]): Promise<void> => {
       for (let index = 0; index < anchors.length; index += BATCH_SIZE) {
         const batch = anchors.slice(index, index + BATCH_SIZE);
         await new Promise<void>((resolve) => {
           requestAnimationFrame(() => {
-            for (const anchor of batch) rewrite(anchor);
+            for (const anchor of batch) rewriter.apply(anchor, settings);
             resolve();
           });
         });

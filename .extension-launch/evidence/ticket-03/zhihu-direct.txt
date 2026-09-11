@@ -1,0 +1,15 @@
+uid=29_0 RootWebArea "Example Domain" url="https://example.com/direct-link-ticket-03?case=zhihu"
+  uid=29_1 ignored
+    uid=29_2 ignored
+      uid=29_3 ignored
+        uid=29_4 heading "Example Domain" level="1"
+          uid=29_5 StaticText "Example Domain"
+            uid=29_6 InlineTextBox "Example Domain"
+        uid=29_7 paragraph
+          uid=29_8 StaticText "This domain is for use in documentation examples without needing permission. Avoid use in operations."
+            uid=29_6 InlineTextBox "This domain is for use in documentation examples without needing permission. Avoid use in "
+            uid=29_6 InlineTextBox "operations."
+        uid=29_9 paragraph
+          uid=29_10 link "Learn more" url="https://iana.org/domains/example"
+            uid=29_11 StaticText "Learn more"
+              uid=29_6 InlineTextBox "Learn more"

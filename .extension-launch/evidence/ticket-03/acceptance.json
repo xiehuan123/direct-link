@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "fingerprint_sha256": "f23274ba422ad8d31b1ea79382ea3973112c8095b75d4d6781e22669312be6e7",
+    "files": [
+      {"path":"assets/popup-DrKr06Qf.css","sha256":"75a44b86c8a717ce1ff1b5ccc05787e9bf2e1b7013ce936efb6b4a63d2c04067"},
+      {"path":"chunks/popup-VXmHwmBV.js","sha256":"4082475278bc2969ab1514d0714dc567774b2442bf9807f0cd51c2f37eb2ca00"},
+      {"path":"content-scripts/redirect.js","sha256":"0b6d64ae40ed3f36f1650af529f3573771e1623ee55e7eb59b4af1026aa908f6"},
+      {"path":"content-scripts/source.js","sha256":"aa819e59e90832dce98e31b624aad0820157ac0cc8335226714cc0bcbcfb6b3d"},
+      {"path":"icon/128.png","sha256":"e74cb0f937897c972dbe670f05ea0f2d06a0ccb5b1409d2514df59a6a52c073e"},
+      {"path":"icon/16.png","sha256":"21bb190492f1c1539f07d80f0024f2357789a9834fa1685c2b1f4b84e7751bcb"},
+      {"path":"icon/32.png","sha256":"feb24b458a1ea5048ac5e9bf7588684c1f6e962a2b5a980370aa17d566d89bcb"},
+      {"path":"icon/48.png","sha256":"16c4536cdf562225aea82dd0003dbc531841f94cb4595f137e4ba09e694e552a"},
+      {"path":"icon/96.png","sha256":"c97f7ccc9e75c6446c8b66a192daff5b24fae527b1f308dc0d1da3ea24b99165"},
+      {"path":"manifest.json","sha256":"e2e9274b6f78cfbaace34e598e929b6712c69fbad53cf305c4329308ef0738f3"},
+      {"path":"popup.html","sha256":"7a42cb90ad98cfb680d54be974c750f7c835c2505570868f62148f4b56562907"}
+    ]
+  },
+  "environment": {"automation_provider":"chrome-devtools-mcp","browser_name":"Headless Chrome","browser_version":"153.0.0.0","extension_id":"oilphoibbjjenebmfeimmpankhcnjalk","installation_type":"unpacked"},
+  "browser_choice": {"default_provider":"playwright-mcp","selected_provider":"chrome-devtools-mcp","reason":"用户明确选择本项目独立 Chrome DevTools MCP 完成真实扩展验收。","user_decision":{"status":"approved","evidence_path":"browser-choice-user-decision.md"}},
+  "required_scenarios": ["install","native_entry","primary_flow","site_toggle","reopen","unknown_parameter"],
+  "scenarios": [
+    {"id":"install","required":true,"status":"passed","method":"real_browser_tool","steps":["从冻结目录安装 unpacked 扩展","读取运行时 manifest"],"expected":"当前票候选以 unpacked 方式启用。","actual":"扩展 ID oilphoibbjjenebmfeimmpankhcnjalk，版本 0.1.0，运行时匹配包含知乎来源与中转域。","artifactPaths":["runtime-environment.json","raw-browser-record.md"]},
+    {"id":"native_entry","required":true,"status":"passed","method":"real_browser_tool","entry_kind":"native_action","steps":["trigger_extension_action","等待后重新 list_pages","保存 popup 快照"],"expected":"真实工具栏 action 打开设置。","actual":"新的扩展 popup 页面显示总开关及三站开关。","artifactPaths":["popup-initial.txt","raw-browser-record.md"]},
+    {"id":"primary_flow","required":true,"status":"passed","method":"real_browser_tool","steps":["启用知乎","访问已核实 target 中转 URL","核对最终 URL"],"expected":"直达 example.com 的指定 HTTPS 地址。","actual":"最终 URL 为 https://example.com/direct-link-ticket-03?case=zhihu。","artifactPaths":["zhihu-direct.txt","zhihu-direct.png","raw-browser-record.md"]},
+    {"id":"site_toggle","required":true,"status":"passed","method":"real_browser_tool","steps":["在真实 popup 关闭知乎","访问有效中转 URL","核对地址"],"expected":"关闭后不由插件跳转。","actual":"保留原 link.zhihu.com URL，公开站点显示自身拦截页。","artifactPaths":["zhihu-disabled.txt","zhihu-disabled.png","raw-browser-record.md"]},
+    {"id":"reopen","required":true,"status":"passed","method":"real_browser_tool","steps":["关闭 popup","再次 action","等待并重新 list_pages","检查新 popup"],"expected":"知乎关闭状态跨 popup 重开保存。","actual":"新 pageId 18 的知乎 switch 未勾选；核对后恢复启用。","artifactPaths":["popup-reopen-disabled.txt","raw-browser-record.md"]},
+    {"id":"unknown_parameter","required":true,"status":"passed","method":"real_browser_tool","steps":["恢复知乎开关","访问只有未知 url 参数的中转 URL","核对地址"],"expected":"未知参数不误跳。","actual":"仍停留在 link.zhihu.com/?url=...，未跳往 example.com。","artifactPaths":["zhihu-unknown-parameter.txt","zhihu-unknown-parameter.png","raw-browser-record.md"]}
+  ]
+}

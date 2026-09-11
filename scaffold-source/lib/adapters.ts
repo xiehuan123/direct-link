@@ -14,6 +14,12 @@ export const SITE_ADAPTERS: readonly SiteAdapter[] = [
     targetParameter: 'target',
     sourceHosts: ['juejin.cn'],
   },
+  {
+    id: 'zhihu',
+    redirectHost: 'link.zhihu.com',
+    targetParameter: 'target',
+    sourceHosts: ['www.zhihu.com', 'zhuanlan.zhihu.com'],
+  },
 ];
 
 export const REDIRECT_MATCHES = SITE_ADAPTERS.map(
