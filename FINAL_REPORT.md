@@ -26,7 +26,7 @@
 - `npm run compile`：通过。
 - `npm run build`：通过，且输出与 `extension/` 一致。
 - `npm audit --omit=dev`：0 vulnerabilities。
-- `acceptance_gate.py check extension`：候选指纹匹配，最终报告见 `.extension-launch/evidence/final/gate-report.json`。
+- `acceptance_gate.py check extension`：候选指纹匹配，最终报告见 `.extension-launch/evidence/final/gate-report-final.json`。
 - `release_bundle.py check/pack extension`：零 warning；ZIP SHA-256 为 `06f404a31339b2be0e7ebff3d04997c97e32343b334c25aa58673f1e5f99c357`。
 - 真实独立 Chrome：从 `extension/` 安装；触发原生 action；总开关和三个分站开关分别关闭、关闭 popup、以新 pageId 重开并保持；最终恢复全开。
 - 三个真实中转 URL 均到达各自的 `example.com` 目标。
@@ -51,8 +51,9 @@
 - `869d392`：知乎适配
 - `04319fe`：CSDN 适配
 - `49efbf6`：最终 `extension/`、真实验收和本地发布包
+- `8962115`：最终审查整改、三分站重开持久化证据和 FINAL_REPORT
 
-每票 Standards/Spec 双轴记录位于 `docs/reviews/`。最终初审发现报告、审查状态和分站重开证据缺口，见 `docs/reviews/final-initial.md`；已补证并进入修正复审，最终结论将在封板记录中更新。
+每票 Standards/Spec 双轴记录位于 `docs/reviews/`。最终初审发现报告、审查状态和分站重开证据缺口，整改后 correction Standards/Spec 均 PASS；完整结论见 `docs/reviews/final.md`。
 
 ## 安装
 

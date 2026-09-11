@@ -6,12 +6,14 @@
 
 **Blocked by:** 03 — 知乎外链安全直达；04 — CSDN 外链安全直达。
 
-**Status:** in-review
+**Status:** completed
 
 **Required skills:** `chrome-extensions`, `implement`, `diagnosing-bugs`（仅真实失败时）, `code-review`, Chrome DevTools MCP, `browser-extension-launch` acceptance/release tools
 
 - [x] AC-01 至 AC-07 在当前候选上有真实或明确边界证据。
-- [ ] AC-08 指纹、release bundle、最终双轴审查和 acceptance gate 对应同一 `extension/`。
-- [ ] 中文使用说明、技能调用记录和 FINAL_REPORT 完整。
+- [x] AC-08 指纹、release bundle、最终双轴审查和 acceptance gate 对应同一 `extension/`。
+- [x] 中文使用说明、技能调用记录和 FINAL_REPORT 完整。
 
 **Candidate:** `extension/`；真实验收：`.extension-launch/evidence/final/acceptance.json`。
+
+**Review:** `docs/reviews/final.md`（初审发现项全部关闭；Standards PASS；Spec PASS）。

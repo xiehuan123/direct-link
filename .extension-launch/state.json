@@ -7,9 +7,9 @@
     "root": "..",
     "target_browser": {"value": "chrome", "status": "confirmed", "source": "project_brief"},
     "delivery_goal": {"value": "local", "status": "confirmed", "source": "explicit_user_request"},
-    "distribution": {"channel": "local_unpacked", "audience": "project_user", "status": "in_review"}
+    "distribution": {"channel": "local_unpacked", "audience": "project_user", "status": "complete"}
   },
-  "phase": "final_review",
+  "phase": "complete",
   "workflow": {
     "complexity": {"value": "complex", "status": "recorded", "reason": "三个站点适配器、共享安全解码、设置持久化、来源页增量改写和真实浏览器整合验收。"},
     "browser_choice": {
@@ -27,8 +27,8 @@
       {"skill": "tdd", "status": "executed", "evidence": ["scaffold-source/tests/"]},
       {"skill": "diagnosing-bugs", "status": "executed", "evidence": ["docs/skills/required-skill-log.md"]},
       {"skill": "implement", "status": "executed", "evidence": [".scratch/direct-link/issues/01-settings-shell.md", ".scratch/direct-link/issues/02-juejin-direct.md", ".scratch/direct-link/issues/03-zhihu-direct.md", ".scratch/direct-link/issues/04-csdn-direct.md", ".scratch/direct-link/issues/05-final-acceptance.md"]},
-      {"skill": "code-review", "status": "final_in_review", "evidence": ["docs/reviews/"]},
-      {"skill": "browser-extension-launch", "status": "final_in_review", "evidence": [".extension-launch/evidence/final/acceptance.json", ".extension-launch/release/pack-report.json"]}
+      {"skill": "code-review", "status": "executed", "evidence": ["docs/reviews/final.md"]},
+      {"skill": "browser-extension-launch", "status": "executed", "evidence": [".extension-launch/evidence/final/acceptance.json", ".extension-launch/evidence/final/gate-report-final.json", ".extension-launch/release/final-pack-report.json"]}
     ],
     "parent_ticket": {"status": "published_local", "path": ".scratch/direct-link/spec.md"},
     "authoritative_artifacts": {
@@ -43,8 +43,8 @@
       "source": "scaffold-source/",
       "loadable_build": "extension/",
       "acceptance": ".extension-launch/evidence/final/acceptance.json",
-      "acceptance_gate": ".extension-launch/evidence/final/gate-report.json",
-      "release_check": ".extension-launch/release/check-report.json",
+      "acceptance_gate": ".extension-launch/evidence/final/gate-report-final.json",
+      "release_check": ".extension-launch/release/final-check-report.json",
       "release_bundle": ".extension-launch/release/external-link-direct-0.1.0.zip"
     }
   },
@@ -55,10 +55,10 @@
     "gate_passed": true,
     "release_check_passed": true,
     "browser_scenarios": "passed",
-    "final_review": "pending"
+    "final_review": "standards_and_spec_passed"
   },
   "needs_user": [],
   "blockers": [],
-  "next_actions": ["完成最终 Standards/Spec 双轴审查；如有 finding，整改并重新绑定最终指纹与验收。", "完成 FINAL_REPORT.md 和最终本地提交。"],
+  "next_actions": [],
   "record_policy": {"state_role": "index_only", "authority": ["workflow.authoritative_artifacts", ".extension-launch/decisions.md"], "paths_relative_to": "project_root"}
 }
