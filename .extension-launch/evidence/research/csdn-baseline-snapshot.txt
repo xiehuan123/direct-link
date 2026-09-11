@@ -1,0 +1,42 @@
+uid=3_0 RootWebArea "csdn - 安全中心" url="https://link.csdn.net/?target=https%3A%2F%2Fexample.com%2F"
+  uid=3_1 ignored
+    uid=3_2 ignored
+      uid=3_3 ignored
+      uid=3_4 ignored
+      uid=3_5 ignored
+      uid=3_6 generic
+        uid=3_7 ignored
+          uid=3_8 ignored
+            uid=3_9 ignored
+          uid=3_10 generic
+            uid=3_11 ignored
+              uid=3_12 ignored
+              uid=3_13 generic
+                uid=3_14 StaticText "请注意您的账号和财产安全"
+                  uid=3_15 InlineTextBox "请注意您的账号和财产安全"
+            uid=3_16 generic
+              uid=3_17 StaticText "您即将离开CSDN，去往："
+                uid=3_15 InlineTextBox "您即将离开CSDN，去往："
+              uid=3_18 StaticText "https://example.com/"
+                uid=3_15 InlineTextBox "https://example.com/"
+            uid=3_19 ignored
+              uid=3_20 link "继续" url="https://example.com/"
+                uid=3_21 StaticText "继续"
+                  uid=3_15 InlineTextBox "继续"
+      uid=3_22 generic
+        uid=3_23 insertion
+          uid=3_24 generic
+            uid=3_25 Iframe "Advertisement" description="Advertisement"
+              uid=3_26 RootWebArea url="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-1076724771190722&output=html&h=90&slotname=1381572267&adk=3652130693&adf=54630664&pi=t.ma~as.1381572267&abgtt=6&w=1200&lmt=1727319035&format=1200x90&url=https%3A%2F%2Flink.csdn.net%2F%3Ftarget%3Dhttps%253A%252F%252Fexample.com%252F&asro=0&aimartd=4&aieuf=1&aicrs=1&uach=WyJtYWNPUyIsIjE1LjYuMSIsImFybSIsIiIsIjE1My4wLjgwMTAuMzYiLG51bGwsMCxudWxsLCI2NCIsW1siR29vZ2xlIENocm9tZSIsIjE1My4wLjgwMTAuMzYiXSxbIk5vdF9BIEJyYW5kIiwiOC4wLjAuMCJdLFsiQ2hyb21pdW0iLCIxNTMuMC44MDEwLjM2Il1dLDBd&dt=1789138230899&bpp=3&bdt=1007&idt=898&shv=r20260909&mjsv=m202609080101&ptt=9&saldr=aa&abxe=1&cookie_enabled=1&eoidce=1&prev_fmts=0x0&nras=1&correlator=985713969093&frm=20&pv=1&u_tz=480&u_his=2&u_h=2160&u_w=3840&u_ah=2160&u_aw=3840&u_cd=24&u_sd=1&dmc=16&adx=0&ady=1939&biw=1200&bih=2029&scr_x=0&scr_y=0&eid=95396000%2C95399630%2C95400774%2C122880937%2C122880973&oid=2&pvsid=2289527830027606&tmod=94397381&uas=0&nvt=1&fc=1920&brdim=22%2C22%2C22%2C22%2C3840%2C0%2C1200%2C2116%2C1200%2C2029&vis=1&rsz=%7C%7CfE%7C&abl=CF&pfx=0&fu=0&bc=31&plas=380x1368_l%7C380x1368_r&bz=1&ifi=2&uci=a!2&fsb=1&dtd=904"
+                uid=3_27 ignored
+                  uid=3_28 ignored
+    uid=3_29 generic
+      uid=3_30 generic
+      uid=3_31 generic
+        uid=3_32 ignored
+          uid=3_33 image
+        uid=3_34 link "前往“计算机安全”的购物选项" live="polite" relevant="additions text"
+          uid=3_35 StaticText "计算机安全"
+            uid=3_15 InlineTextBox "计算机安全"
+      uid=3_36 generic
+        uid=3_37 button "关闭商品锚点链接"

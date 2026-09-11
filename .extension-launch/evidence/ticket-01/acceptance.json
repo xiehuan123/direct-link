@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "fingerprint_sha256": "effe1b24fd3b2b95cd8096e71d196db64bfa45dca25ab507dcdf569cf61b5eb4",
+    "files": [
+      {"path":"assets/popup-DrKr06Qf.css","sha256":"75a44b86c8a717ce1ff1b5ccc05787e9bf2e1b7013ce936efb6b4a63d2c04067"},
+      {"path":"chunks/popup-B3ojsaNc.js","sha256":"2c31ec6dff047a6479033ee5a84f6fe028554866cba2d4c939d183abefee4e99"},
+      {"path":"icon/128.png","sha256":"e74cb0f937897c972dbe670f05ea0f2d06a0ccb5b1409d2514df59a6a52c073e"},
+      {"path":"icon/16.png","sha256":"21bb190492f1c1539f07d80f0024f2357789a9834fa1685c2b1f4b84e7751bcb"},
+      {"path":"icon/32.png","sha256":"feb24b458a1ea5048ac5e9bf7588684c1f6e962a2b5a980370aa17d566d89bcb"},
+      {"path":"icon/48.png","sha256":"16c4536cdf562225aea82dd0003dbc531841f94cb4595f137e4ba09e694e552a"},
+      {"path":"icon/96.png","sha256":"c97f7ccc9e75c6446c8b66a192daff5b24fae527b1f308dc0d1da3ea24b99165"},
+      {"path":"manifest.json","sha256":"91057ef0f7a169823edcc804d139cc5bacf6065d68d7b400eb884fa241a863d2"},
+      {"path":"popup.html","sha256":"a78d134c477f0df8361c745238b8a6576c5e4f477a20f9444c986df49fb4ef99"}
+    ]
+  },
+  "environment": {
+    "automation_provider": "chrome-devtools-mcp",
+    "browser_name": "Headless Chrome",
+    "browser_version": "153.0.0.0",
+    "extension_id": "cmhbeofehlachihaemmpbpailbhoilgc",
+    "installation_type": "unpacked"
+  },
+  "browser_choice": {
+    "default_provider": "playwright-mcp",
+    "selected_provider": "chrome-devtools-mcp",
+    "reason": "本项目用户已明确选择具备安装扩展和触发原生 action 能力的独立 Chrome DevTools MCP，替代未为隔离 CLI 配置的默认 Playwright MCP。",
+    "user_decision": {"status":"approved","evidence_path":"browser-choice-user-decision.md"}
+  },
+  "required_scenarios": ["install", "native_entry", "primary_flow", "reopen"],
+  "scenarios": [
+    {
+      "id": "install",
+      "required": true,
+      "status": "passed",
+      "method": "real_browser_tool",
+      "steps": ["调用 Chrome DevTools MCP install_extension 加载冻结候选目录", "调用 list_extensions 核对名称、ID、版本和启用状态", "在扩展页读取 chrome.runtime.getManifest()"],
+      "expected": "已解压候选以外链直达 0.1.0 启用，且实际运行路径具有 storage 权限。",
+      "actual": "安装成功；ID cmhbeofehlachihaemmpbpailbhoilgc，外链直达 v0.1.0 Enabled，Manifest V3 且 permissions 仅为 storage。",
+      "artifactPaths": ["raw-browser-record.md", "runtime-environment.json"]
+    },
+    {
+      "id": "native_entry",
+      "required": true,
+      "status": "passed",
+      "method": "real_browser_tool",
+      "entry_kind": "native_action",
+      "steps": ["调用 trigger_extension_action 触发已安装扩展的工具栏 action", "重新 list_pages 等待新扩展页", "保存真实 popup 的无障碍快照"],
+      "expected": "从工具栏 action 打开外链直达设置 popup。",
+      "actual": "出现 chrome-extension://cmhbeofehlachihaemmpbpailbhoilgc/popup.html，四个开关和隐私说明可见。",
+      "artifactPaths": ["popup-initial.txt", "raw-browser-record.md"]
+    },
+    {
+      "id": "primary_flow",
+      "required": true,
+      "status": "passed",
+      "method": "real_browser_tool",
+      "steps": ["从真实 popup 快照定位知乎 switch", "用 fill_form 将知乎开关改为 false", "观察 status 变为设置已保存", "保存截图和操作后快照"],
+      "expected": "用户可以关闭单个平台，界面确认设置已保存且其他开关不变。",
+      "actual": "知乎开关变为未选中，总开关、掘金和 CSDN 保持选中，界面显示设置已保存。",
+      "artifactPaths": ["popup-zhihu-off.txt", "popup-zhihu-off.png", "raw-browser-record.md"]
+    },
+    {
+      "id": "reopen",
+      "required": true,
+      "status": "passed",
+      "method": "real_browser_tool",
+      "steps": ["调用 close_page 关闭真实 popup", "再次 trigger_extension_action", "重新 list_pages 获取新 pageId", "保存重开后的快照和截图"],
+      "expected": "重开 popup 后知乎仍关闭，其他开关仍开启。",
+      "actual": "新 popup page 3 中知乎 switch 未选中，master、掘金、CSDN 均选中，证明 chrome.storage.local 持久化生效。",
+      "artifactPaths": ["popup-reopened.txt", "popup-reopened.png", "raw-browser-record.md"]
+    }
+  ]
+}

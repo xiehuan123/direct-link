@@ -1,0 +1,26 @@
+import { defineConfig } from 'wxt';
+
+// See https://wxt.dev/api/config.html
+export default defineConfig({
+  manifest: {
+    name: '外链直达',
+    description: '在掘金、知乎和 CSDN 的已核实外链中转地址上安全直达目标网页',
+    version: '0.1.0',
+    permissions: ['storage'],
+    action: {
+      default_title: '外链直达',
+      default_icon: {
+        16: 'icon/16.png',
+        32: 'icon/32.png',
+        48: 'icon/48.png',
+        128: 'icon/128.png',
+      },
+    },
+    icons: {
+      16: 'icon/16.png',
+      32: 'icon/32.png',
+      48: 'icon/48.png',
+      128: 'icon/128.png',
+    },
+  },
+});
