@@ -6,7 +6,7 @@
 
 **Blocked by:** 02 — 掘金外链安全直达。
 
-**Status:** in-review
+**Status:** completed
 
 **Required skills:** `chrome-extensions`, `implement`, `tdd`, `diagnosing-bugs`（仅真实失败时）, `code-review`, Chrome DevTools MCP
 
@@ -14,3 +14,5 @@
 - [x] 真实 Chrome 访问已核实中转 URL，记录最终 URL 或外部站点限制。
 
 **Evidence:** `.extension-launch/evidence/ticket-03/acceptance.json`（真实 Chrome DevTools MCP；有效目标直达、分站关闭、重开持久化与未知参数保留）。
+
+**Review:** `docs/reviews/ticket-03.md`（Standards PASS；Spec PASS）。

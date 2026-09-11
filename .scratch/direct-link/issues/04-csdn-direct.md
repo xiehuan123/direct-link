@@ -6,9 +6,11 @@
 
 **Blocked by:** 02 — 掘金外链安全直达。
 
-**Status:** blocked
+**Status:** in-review
 
 **Required skills:** `chrome-extensions`, `implement`, `tdd`, `code-review`, Chrome DevTools MCP
 
-- [ ] AC-05 CSDN 有效中转真实浏览器直达且开关有效。
-- [ ] AC-07 动态新增链接在受限增量处理下完成决策。
+- [x] AC-05 CSDN 有效中转真实浏览器直达且开关有效。
+- [x] AC-07 动态新增链接在受限增量处理下完成决策。
+
+**Evidence:** `.extension-launch/evidence/ticket-04/acceptance.json`（冻结构建的真实 Chrome DevTools MCP 验收）。

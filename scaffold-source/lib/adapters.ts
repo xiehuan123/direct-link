@@ -20,6 +20,12 @@ export const SITE_ADAPTERS: readonly SiteAdapter[] = [
     targetParameter: 'target',
     sourceHosts: ['www.zhihu.com', 'zhuanlan.zhihu.com'],
   },
+  {
+    id: 'csdn',
+    redirectHost: 'link.csdn.net',
+    targetParameter: 'target',
+    sourceHosts: ['blog.csdn.net', 'www.csdn.net'],
+  },
 ];
 
 export const REDIRECT_MATCHES = SITE_ADAPTERS.map(

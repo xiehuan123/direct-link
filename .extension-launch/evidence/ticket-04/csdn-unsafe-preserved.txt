@@ -1,0 +1,32 @@
+uid=42_0 RootWebArea "csdn - 安全中心" url="https://link.csdn.net/?target=javascript%3Aalert%281%29"
+  uid=42_1 ignored
+    uid=42_2 ignored
+      uid=42_3 ignored
+      uid=42_4 ignored
+      uid=42_5 ignored
+      uid=42_6 generic
+        uid=42_7 ignored
+          uid=42_8 ignored
+            uid=42_9 ignored
+          uid=42_10 generic
+            uid=42_11 ignored
+            uid=42_12 generic
+              uid=42_13 StaticText "链接安全性检验中 请稍后..."
+                uid=42_14 InlineTextBox "链接安全性检验中 请稍后..."
+      uid=42_15 generic
+        uid=42_16 insertion
+          uid=42_17 generic
+            uid=42_18 Iframe "Advertisement" description="Advertisement"
+              uid=42_19 RootWebArea url="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-1076724771190722&output=html&h=90&slotname=1381572267&adk=3652130693&adf=54630664&pi=t.ma~as.1381572267&abgtt=6&w=1200&lmt=1727319035&format=1200x90&url=https%3A%2F%2Flink.csdn.net%2F%3Ftarget%3Djavascript%253Aalert%25281%2529&aiof=11&asro=0&aimartd=4&aieuf=1&aicrs=1&uach=WyJtYWNPUyIsIjE1LjYuMSIsImFybSIsIiIsIjE1My4wLjgwMTAuMzYiLG51bGwsMCxudWxsLCI2NCIsW1siR29vZ2xlIENocm9tZSIsIjE1My4wLjgwMTAuMzYiXSxbIk5vdF9BIEJyYW5kIiwiOC4wLjAuMCJdLFsiQ2hyb21pdW0iLCIxNTMuMC44MDEwLjM2Il1dLDBd&dt=1789145292027&bpp=1&bdt=66&idt=359&shv=r20260909&mjsv=m202609080101&ptt=9&saldr=aa&abxe=1&cookie=ID%3D48c9f9594ebd4d2a%3AT%3D1789138232%3ART%3D1789144919%3AS%3DALNI_MZkGVOMzMz7y1jm3YFuoMBJCVk3Xw&gpic=UID%3D000014fba99d2e48%3AT%3D1789138232%3ART%3D1789144919%3AS%3DALNI_MZdbWavtpoh7EhpaYStmmZMf5ZWnw&eo_id_str=ID%3Da00ad0e60a07361e%3AT%3D1789138232%3ART%3D1789144919%3AS%3DAA-Afjbknhovph_PfUF9Op3bNNsu&prev_fmts=0x0&nras=1&correlator=830827881967&frm=20&pv=1&u_tz=480&u_his=13&u_h=2160&u_w=3840&u_ah=2160&u_aw=3840&u_cd=24&u_sd=1&dmc=16&adx=0&ady=1939&biw=1200&bih=2029&scr_x=0&scr_y=0&eid=95399630%2C95400775%2C95401791%2C122880931&oid=2&pvsid=8005172898068453&tmod=804106639&uas=0&nvt=1&fc=1920&brdim=0%2C-589%2C0%2C-589%2C3840%2C0%2C1200%2C2029%2C1200%2C2029&vis=1&rsz=%7C%7CfE%7C&abl=CF&pfx=0&fu=0&bc=31&bz=1&ifi=2&uci=a!2&fsb=1&dtd=371"
+                uid=42_20 ignored
+                  uid=42_21 ignored
+    uid=42_22 generic
+      uid=42_23 generic
+      uid=42_24 generic
+        uid=42_25 ignored
+          uid=42_26 image
+        uid=42_27 link "前往“评估 系统安全”的购物选项" live="polite" relevant="additions text"
+          uid=42_28 StaticText "评估 系统安全"
+            uid=42_14 InlineTextBox "评估 系统安全"
+      uid=42_29 generic
+        uid=42_30 button "关闭商品锚点链接"

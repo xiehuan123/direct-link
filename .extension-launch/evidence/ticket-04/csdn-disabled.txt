@@ -1,0 +1,43 @@
+uid=38_0 RootWebArea "csdn - 安全中心" url="https://link.csdn.net/?target=https%3A%2F%2Fexample.com%2Fdirect-link-ticket-04%3Fcase%3Ddisabled"
+  uid=38_1 ignored
+    uid=38_2 ignored
+      uid=38_3 ignored
+      uid=38_4 ignored
+      uid=38_5 ignored
+      uid=38_6 generic
+        uid=38_7 ignored
+          uid=38_8 ignored
+            uid=38_9 ignored
+          uid=38_10 generic
+            uid=38_11 ignored
+              uid=38_12 ignored
+              uid=38_13 generic
+                uid=38_14 StaticText "请注意您的账号和财产安全"
+                  uid=38_15 InlineTextBox "请注意您的账号和财产安全"
+            uid=38_16 generic
+              uid=38_17 StaticText "您即将离开CSDN，去往："
+                uid=38_15 InlineTextBox "您即将离开CSDN，去往："
+              uid=38_18 StaticText "https://example.com/direct-link-ticket-04?case=disabled"
+                uid=38_15 InlineTextBox "https://example.com/direct-link-ti"
+                uid=38_15 InlineTextBox "cket-04?case=disabled"
+            uid=38_19 ignored
+              uid=38_20 link "继续" url="https://example.com/direct-link-ticket-04?case=disabled"
+                uid=38_21 StaticText "继续"
+                  uid=38_15 InlineTextBox "继续"
+      uid=38_22 generic
+        uid=38_23 insertion
+          uid=38_24 generic
+            uid=38_25 Iframe "Advertisement" description="Advertisement"
+              uid=38_26 RootWebArea url="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-1076724771190722&output=html&h=90&slotname=1381572267&adk=3652130693&adf=54630664&pi=t.ma~as.1381572267&abgtt=6&w=1200&lmt=1727319035&format=1200x90&url=https%3A%2F%2Flink.csdn.net%2F%3Ftarget%3Dhttps%253A%252F%252Fexample.com%252Fdirect-link-ticket-04%253Fcase%253Ddisabled&aiof=11&asro=0&aimartd=4&aieuf=1&aicrs=1&uach=WyJtYWNPUyIsIjE1LjYuMSIsImFybSIsIiIsIjE1My4wLjgwMTAuMzYiLG51bGwsMCxudWxsLCI2NCIsW1siR29vZ2xlIENocm9tZSIsIjE1My4wLjgwMTAuMzYiXSxbIk5vdF9BIEJyYW5kIiwiOC4wLjAuMCJdLFsiQ2hyb21pdW0iLCIxNTMuMC44MDEwLjM2Il1dLDBd&dt=1789144917487&bpp=12&bdt=71&idt=1219&shv=r20260909&mjsv=m202609080101&ptt=9&saldr=aa&abxe=1&cookie=ID%3D48c9f9594ebd4d2a%3AT%3D1789138232%3ART%3D1789138232%3AS%3DALNI_MZkGVOMzMz7y1jm3YFuoMBJCVk3Xw&gpic=UID%3D000014fba99d2e48%3AT%3D1789138232%3ART%3D1789138232%3AS%3DALNI_MZdbWavtpoh7EhpaYStmmZMf5ZWnw&eo_id_str=ID%3Da00ad0e60a07361e%3AT%3D1789138232%3ART%3D1789138232%3AS%3DAA-Afjbknhovph_PfUF9Op3bNNsu&prev_fmts=0x0&nras=1&correlator=169011991097&frm=20&pv=1&u_tz=480&u_his=11&u_h=2160&u_w=3840&u_ah=2160&u_aw=3840&u_cd=24&u_sd=1&dmc=16&adx=0&ady=1939&biw=1200&bih=2029&scr_x=0&scr_y=0&eid=95399629%2C95400775%2C95401792%2C122880931&oid=2&pvsid=3257159935164512&tmod=804106639&uas=0&nvt=1&fc=1920&brdim=0%2C-589%2C0%2C-589%2C3840%2C0%2C1200%2C2029%2C1200%2C2029&vis=1&rsz=%7C%7CfE%7C&abl=CF&pfx=0&fu=0&bc=31&bz=1&ifi=2&uci=a!2&fsb=1&dtd=1228"
+                uid=38_27 ignored
+                  uid=38_28 ignored
+    uid=38_29 generic
+      uid=38_30 generic
+      uid=38_31 generic
+        uid=38_32 ignored
+          uid=38_33 image
+        uid=38_34 link "前往“比较商用复印机”的购物选项" live="polite" relevant="additions text"
+          uid=38_35 StaticText "比较商用复印机"
+            uid=38_15 InlineTextBox "比较商用复印机"
+      uid=38_36 generic
+        uid=38_37 button "关闭商品锚点链接"
