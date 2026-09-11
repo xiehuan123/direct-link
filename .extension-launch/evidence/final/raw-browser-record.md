@@ -20,6 +20,7 @@
 2. 关闭 popup 后访问有效掘金中转，页面停在原 `link.juejin.cn` 并显示掘金跳转提示：`master-off-juejin-preserved.txt`、`.png`。
 3. 再次 action，等待并重新枚举得到新 popup page 23，没有复用旧 pageId。`popup-reopened-paused.txt`、`.png` 显示总开关仍关闭且状态为“已暂停全部直达”。随后恢复总开关。
 4. 最后一次关闭/重开得到 page 25，`popup-final-all-enabled.txt` 显示总开关及三个分站均开启，作为交付后的本机最终状态。
+5. 最终审查要求把三个分站各自的重开持久化绑定到同一候选：page 26 用 `fill_form` 同时关闭掘金、知乎、CSDN，关闭 popup 后重新 action 并重新枚举得到 page 27。`popup-reopened-all-sites-disabled.txt`、`.png` 显示总开关保持开启而三个分站均保持关闭。再用 `fill_form` 恢复三站，关闭并重开得到 page 28；`popup-final-restored-all-sites.txt` 显示四项全开。
 
 ## 三站有效中转
 

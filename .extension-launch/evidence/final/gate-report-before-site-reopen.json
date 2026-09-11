@@ -15,10 +15,9 @@
     "reopen",
     "safe_failure",
     "site_isolation",
-    "site_switch_reopen",
     "zhihu_primary"
   ],
-  "checked_artifacts": 21,
+  "checked_artifacts": 19,
   "state_updated": false,
   "claims_authenticated": false,
   "errors": [],

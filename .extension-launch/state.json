@@ -7,7 +7,7 @@
     "root": "..",
     "target_browser": {"value": "chrome", "status": "confirmed", "source": "project_brief"},
     "delivery_goal": {"value": "local", "status": "confirmed", "source": "explicit_user_request"},
-    "distribution": {"channel": "local_unpacked", "audience": "project_user", "status": "complete"}
+    "distribution": {"channel": "local_unpacked", "audience": "project_user", "status": "in_review"}
   },
   "phase": "final_review",
   "workflow": {
