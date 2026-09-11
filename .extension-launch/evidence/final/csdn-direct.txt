@@ -1,0 +1,15 @@
+uid=50_0 RootWebArea "Example Domain" url="https://example.com/final-csdn?source=e2e"
+  uid=50_1 ignored
+    uid=50_2 ignored
+      uid=50_3 ignored
+        uid=50_4 heading "Example Domain" level="1"
+          uid=50_5 StaticText "Example Domain"
+            uid=50_6 InlineTextBox "Example Domain"
+        uid=50_7 paragraph
+          uid=50_8 StaticText "This domain is for use in documentation examples without needing permission. Avoid use in operations."
+            uid=50_6 InlineTextBox "This domain is for use in documentation examples without needing permission. Avoid use in "
+            uid=50_6 InlineTextBox "operations."
+        uid=50_9 paragraph
+          uid=50_10 link "Learn more" url="https://iana.org/domains/example"
+            uid=50_11 StaticText "Learn more"
+              uid=50_6 InlineTextBox "Learn more"

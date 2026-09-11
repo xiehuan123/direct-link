@@ -1,367 +1,64 @@
 {
   "schema_version": 1,
   "created_at": "2026-09-11T14:50:49+00:00",
-  "updated_at": "2026-09-11T14:50:49+00:00",
+  "updated_at": "2026-09-12T00:00:00+08:00",
   "project": {
     "name": "外链直达",
     "root": "..",
-    "idea": "在掘金、知乎、CSDN来源页还原已核实外链，并在中转页自动直达；提供本地保存的总开关和分站开关。",
-    "target_browser": {
-      "value": "chrome",
-      "status": "assumption",
-      "source": "reversible_first_iteration_default"
-    },
-    "distribution": {
-      "channel": null,
-      "audience": null,
-      "status": "undecided"
-    },
-    "delivery_goal": {
-      "value": "local",
-      "status": "provided",
-      "source": "explicit_cli_argument"
-    }
+    "target_browser": {"value": "chrome", "status": "confirmed", "source": "project_brief"},
+    "delivery_goal": {"value": "local", "status": "confirmed", "source": "explicit_user_request"},
+    "distribution": {"channel": "local_unpacked", "audience": "project_user", "status": "complete"}
   },
-  "record_policy": {
-    "authority": [
-      "workflow.authoritative_artifacts",
-      "decisions.md"
-    ],
-    "state_role": "index_only",
-    "paths_relative_to": ".extension-launch",
-    "updates": "single_writer; preserve last valid state before atomic replacement",
-    "resume": "read authoritative documents; compare actual version and evidence before resuming"
-  },
-  "phase": "discovery",
+  "phase": "final_review",
   "workflow": {
-    "complexity": {
-      "value": "complex",
-      "reason": "三个网站适配器、共享安全解码、来源页改写、中转页自动跳转、设置持久化与跨上下文真实验收形成多个有依赖的纵向功能。",
-      "status": "recorded",
-      "source": "explicit_cli_argument",
-      "decision_owner": "lead_agent"
+    "complexity": {"value": "complex", "status": "recorded", "reason": "三个站点适配器、共享安全解码、设置持久化、来源页增量改写和真实浏览器整合验收。"},
+    "browser_choice": {
+      "selected_provider": "chrome-devtools-mcp",
+      "status": "approved_and_executed",
+      "decision_path": "run-inputs/browser-choice/user-decision.md",
+      "final_evidence_copy": ".extension-launch/evidence/final/browser-choice-user-decision.md"
     },
-    "default_e2e_provider": "playwright-mcp",
-    "browser_choice": null,
     "required_skill_stages": [
-      {
-        "skill": "chrome-extensions",
-        "stage": "architecture",
-        "applies_when": "all_projects",
-        "status": "not_executed",
-        "source_path": null,
-        "source_revision": null,
-        "read_evidence": [],
-        "execution_evidence": []
-      },
-      {
-        "skill": "extension-create",
-        "stage": "creation",
-        "applies_when": "new_extension",
-        "status": "not_executed",
-        "source_path": null,
-        "source_revision": null,
-        "read_evidence": [],
-        "execution_evidence": []
-      },
-      {
-        "skill": "diagnosing-bugs",
-        "stage": "debugging",
-        "applies_when": "failure_or_regression",
-        "status": "not_executed",
-        "source_path": null,
-        "source_revision": null,
-        "read_evidence": [],
-        "execution_evidence": []
-      },
-      {
-        "skill": "code-review",
-        "stage": "review",
-        "applies_when": "each_implementation_and_final_candidate",
-        "status": "not_executed",
-        "source_path": null,
-        "source_revision": null,
-        "read_evidence": [],
-        "execution_evidence": []
-      },
-      {
-        "skill": "setup-matt-pocock-skills",
-        "stage": "project_setup",
-        "applies_when": "complex_project_first_use_or_missing_configuration",
-        "status": "not_executed",
-        "source_path": null,
-        "source_revision": null,
-        "read_evidence": [],
-        "execution_evidence": []
-      },
-      {
-        "skill": "to-spec",
-        "stage": "specification",
-        "applies_when": "complex_project",
-        "status": "not_executed",
-        "source_path": null,
-        "source_revision": null,
-        "read_evidence": [],
-        "execution_evidence": []
-      },
-      {
-        "skill": "to-tickets",
-        "stage": "ticket_decomposition",
-        "applies_when": "complex_project",
-        "status": "not_executed",
-        "source_path": null,
-        "source_revision": null,
-        "read_evidence": [],
-        "execution_evidence": []
-      },
-      {
-        "skill": "triage",
-        "stage": "feedback_triage",
-        "applies_when": "external_feedback_or_existing_tickets_need_triage",
-        "status": "not_executed",
-        "source_path": null,
-        "source_revision": null,
-        "read_evidence": [],
-        "execution_evidence": []
-      },
-      {
-        "skill": "implement",
-        "stage": "ticket_implementation",
-        "applies_when": "each_complex_project_ticket",
-        "status": "not_executed",
-        "source_path": null,
-        "source_revision": null,
-        "read_evidence": [],
-        "execution_evidence": []
-      }
+      {"skill": "setup-matt-pocock-skills", "status": "executed", "evidence": ["AGENTS.md", "docs/agents/"]},
+      {"skill": "to-spec", "status": "executed", "evidence": [".scratch/direct-link/spec.md"]},
+      {"skill": "to-tickets", "status": "executed", "evidence": [".scratch/direct-link/issues/"]},
+      {"skill": "extension-create", "status": "executed", "evidence": ["scaffold-source/package.json", "scaffold-source/package-lock.json"]},
+      {"skill": "chrome-extensions", "status": "executed", "evidence": ["scaffold-source/wxt.config.ts", "extension/manifest.json"]},
+      {"skill": "tdd", "status": "executed", "evidence": ["scaffold-source/tests/"]},
+      {"skill": "diagnosing-bugs", "status": "executed", "evidence": ["docs/skills/required-skill-log.md"]},
+      {"skill": "implement", "status": "executed", "evidence": [".scratch/direct-link/issues/01-settings-shell.md", ".scratch/direct-link/issues/02-juejin-direct.md", ".scratch/direct-link/issues/03-zhihu-direct.md", ".scratch/direct-link/issues/04-csdn-direct.md", ".scratch/direct-link/issues/05-final-acceptance.md"]},
+      {"skill": "code-review", "status": "final_in_review", "evidence": ["docs/reviews/"]},
+      {"skill": "browser-extension-launch", "status": "final_in_review", "evidence": [".extension-launch/evidence/final/acceptance.json", ".extension-launch/release/pack-report.json"]}
     ],
-    "complex_chain": [
-      "setup-matt-pocock-skills",
-      "to-spec",
-      "publish-parent-ticket",
-      "to-tickets",
-      "implement"
-    ],
-    "complex_chain_required_when": "complex_project",
-    "parent_ticket": {
-      "status": "not_published",
-      "path_or_url": null,
-      "evidence": []
-    },
+    "parent_ticket": {"status": "published_local", "path": ".scratch/direct-link/spec.md"},
     "authoritative_artifacts": {
-      "spec": null,
-      "parent_ticket": null,
-      "implementation_tickets": [],
-      "paths_relative_to": "project_root",
-      "produced_by_required_skills": true
-    },
-    "ticket_policy": "lead_agent_decides; native skill artifacts are authoritative; publish parent before decomposition; explicit file/module ownership; dependencies before implement; triage only for external feedback or existing tickets; independent review and real E2E"
-  },
-  "spec": {
-    "path": "spec.md",
-    "status": "awaiting_to_spec",
-    "role": "coordination_pointer"
-  },
-  "decisions_path": "decisions.md",
-  "progress_path": "progress.md",
-  "tasks": [
-    {
-      "id": "T-001",
-      "type": "scope",
-      "path": "tasks/T-001.md",
-      "parent": null,
-      "children": [
-        "T-002",
-        "T-003",
-        "T-004",
-        "T-005"
+      "spec": ".scratch/direct-link/spec.md",
+      "implementation_tickets": [
+        ".scratch/direct-link/issues/01-settings-shell.md",
+        ".scratch/direct-link/issues/02-juejin-direct.md",
+        ".scratch/direct-link/issues/03-zhihu-direct.md",
+        ".scratch/direct-link/issues/04-csdn-direct.md",
+        ".scratch/direct-link/issues/05-final-acceptance.md"
       ],
-      "depends_on": [],
-      "status": "needs_scope",
-      "in_scope": true,
-      "closing_dependencies": [
-        "T-002",
-        "T-003"
-      ],
-      "scope_ready": false,
-      "version": null,
-      "evidence": []
-    },
-    {
-      "id": "T-002",
-      "type": "implementation",
-      "path": "tasks/T-002.md",
-      "parent": "T-001",
-      "children": [],
-      "depends_on": [],
-      "status": "needs_scope",
-      "in_scope": true,
-      "closing_dependencies": [],
-      "scope_ready": false,
-      "version": null,
-      "evidence": []
-    },
-    {
-      "id": "T-003",
-      "type": "acceptance",
-      "path": "tasks/T-003.md",
-      "parent": "T-001",
-      "children": [],
-      "depends_on": [
-        "T-002"
-      ],
-      "status": "blocked",
-      "in_scope": true,
-      "closing_dependencies": [],
-      "scope_ready": false,
-      "version": null,
-      "evidence": []
-    },
-    {
-      "id": "T-004",
-      "type": "release-preparation",
-      "path": "tasks/T-004.md",
-      "parent": "T-001",
-      "children": [],
-      "depends_on": [
-        "T-003"
-      ],
-      "status": "not_in_scope",
-      "in_scope": false,
-      "closing_dependencies": [],
-      "scope_ready": false,
-      "version": null,
-      "evidence": []
-    },
-    {
-      "id": "T-005",
-      "type": "launch-tracking",
-      "path": "tasks/T-005.md",
-      "parent": "T-001",
-      "children": [],
-      "depends_on": [
-        "T-004"
-      ],
-      "status": "not_in_scope",
-      "in_scope": false,
-      "closing_dependencies": [],
-      "scope_ready": false,
-      "version": null,
-      "evidence": []
+      "source": "scaffold-source/",
+      "loadable_build": "extension/",
+      "acceptance": ".extension-launch/evidence/final/acceptance.json",
+      "acceptance_gate": ".extension-launch/evidence/final/gate-report.json",
+      "release_check": ".extension-launch/release/check-report.json",
+      "release_bundle": ".extension-launch/release/external-link-direct-0.1.0.zip"
     }
-  ],
-  "next_actions": [
-    "读取已有要求与项目约定，补齐首版范围和可观察验收，沿用已明确的答案。",
-    "运行 doctor 并用宿主工具验证当前步骤需要的实际执行能力。",
-    "自行记录需求复杂度及理由；实际读取并执行适用的必需 skills，复杂时按项目配置、正式主票、拆票、implement 顺序推进。",
-    "连接 Playwright MCP 并实测安装/加载插件能力；不支持时记录原因，请用户选择安装/启用或推荐的真实浏览器替代。",
-    "仅对会影响当前实现的未定重要事项询问用户，再执行 T-002。"
-  ],
+  },
+  "acceptance": {
+    "automation_provider": "chrome-devtools-mcp",
+    "extension_id": "baicapkmaepmibjbohgmbobdkigoocml",
+    "candidate_fingerprint_sha256": "ff3eb54e3c1fce2b5a59a4c149c2350dd9850c0edb35db7200da6aef0adf6758",
+    "gate_passed": true,
+    "release_check_passed": true,
+    "browser_scenarios": "passed",
+    "final_review": "pending"
+  },
   "needs_user": [],
-  "capabilities": {
-    "checked_at": null,
-    "bundled_methods": {
-      "dependencies": {
-        "kind": "bundled_method",
-        "source": "references/dependencies.md",
-        "source_base": "skill_root",
-        "status": "available",
-        "host_activation": "not_applicable",
-        "execution_proven": false
-      },
-      "workflow": {
-        "kind": "bundled_method",
-        "source": "references/workflow.md",
-        "source_base": "skill_root",
-        "status": "available",
-        "host_activation": "not_applicable",
-        "execution_proven": false
-      },
-      "development": {
-        "kind": "bundled_method",
-        "source": "references/development.md",
-        "source_base": "skill_root",
-        "status": "available",
-        "host_activation": "not_applicable",
-        "execution_proven": false
-      },
-      "acceptance": {
-        "kind": "bundled_method",
-        "source": "references/acceptance.md",
-        "source_base": "skill_root",
-        "status": "available",
-        "host_activation": "not_applicable",
-        "execution_proven": false
-      },
-      "publishing": {
-        "kind": "bundled_method",
-        "source": "references/publishing.md",
-        "source_base": "skill_root",
-        "status": "available",
-        "host_activation": "not_applicable",
-        "execution_proven": false
-      }
-    },
-    "external_skills": [],
-    "execution_tools": {
-      "status": "unverified"
-    },
-    "development_software": {
-      "status": "unverified"
-    },
-    "doctor_report": null
-  },
-  "milestones": {
-    "built": {
-      "status": "not_started",
-      "version": null,
-      "evidence": []
-    },
-    "accepted": {
-      "status": "not_started",
-      "version": null,
-      "evidence": []
-    },
-    "submitted": {
-      "status": "not_started",
-      "version": null,
-      "evidence": []
-    },
-    "live": {
-      "status": "not_started",
-      "version": null,
-      "evidence": []
-    }
-  },
-  "release": {
-    "status": "not_prepared",
-    "candidate_version": null,
-    "package": null,
-    "publishing_intent": {
-      "status": "not_established",
-      "context_evidence": [],
-      "readiness_notice": "not_shown"
-    },
-    "registration": {
-      "status": "not_checked",
-      "fee": null,
-      "payment_method_status": "not_checked"
-    },
-    "assets": {
-      "status": "not_started",
-      "required_missing": [],
-      "generation_status": "not_attempted",
-      "waiting_for_user_upload": false
-    },
-    "preparation_in_scope": false,
-    "submission_in_scope": false,
-    "acceptance_task": "T-003",
-    "preparation_task": "T-004",
-    "tracking_task": "T-005",
-    "channel": null,
-    "submission": null,
-    "store_url": null,
-    "authorization_evidence": [],
-    "first_use_evidence": []
-  }
+  "blockers": [],
+  "next_actions": ["完成最终 Standards/Spec 双轴审查；如有 finding，整改并重新绑定最终指纹与验收。", "完成 FINAL_REPORT.md 和最终本地提交。"],
+  "record_policy": {"state_role": "index_only", "authority": ["workflow.authoritative_artifacts", ".extension-launch/decisions.md"], "paths_relative_to": "project_root"}
 }

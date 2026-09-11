@@ -1,0 +1,18 @@
+uid=45_0 RootWebArea "跳转提示-稀土掘金" url="https://link.juejin.cn/?target=https%3A%2F%2Fexample.com%2Ffinal-master-off"
+  uid=45_1 ignored
+    uid=45_2 ignored
+      uid=45_3 generic
+        uid=45_4 generic
+          uid=45_5 image url="https://lf-web-assets.juejin.cn/obj/juejin-web/link_juejin_cn/assets/logo_new.0ec938fb.svg"
+          uid=45_6 ignored
+            uid=45_7 paragraph
+              uid=45_8 StaticText "即将离开稀土掘金，请注意账号财产安全"
+                uid=45_9 InlineTextBox "即将离开稀土掘金，请注意账号财产安全"
+            uid=45_10 generic
+              uid=45_11 ignored
+                uid=45_12 paragraph
+                  uid=45_13 StaticText "https://example.com/final-master-off"
+                    uid=45_9 InlineTextBox "https://example.com/final-master-off"
+            uid=45_14 button "继续访问"
+              uid=45_15 StaticText "继续访问"
+                uid=45_9 InlineTextBox "继续访问"

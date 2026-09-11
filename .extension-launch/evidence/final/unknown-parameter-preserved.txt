@@ -1,0 +1,16 @@
+uid=51_0 RootWebArea "跳转提示-稀土掘金" url="https://link.juejin.cn/?url=https%3A%2F%2Fexample.com%2Ffinal-unknown"
+  uid=51_1 ignored
+    uid=51_2 ignored
+      uid=51_3 generic
+        uid=51_4 generic
+          uid=51_5 image url="https://lf-web-assets.juejin.cn/obj/juejin-web/link_juejin_cn/assets/logo_new.0ec938fb.svg"
+          uid=51_6 ignored
+            uid=51_7 paragraph
+              uid=51_8 StaticText "即将离开稀土掘金，请注意账号财产安全"
+                uid=51_9 InlineTextBox "即将离开稀土掘金，请注意账号财产安全"
+            uid=51_10 generic
+              uid=51_11 ignored
+                uid=51_12 ignored
+            uid=51_13 button "继续访问"
+              uid=51_14 StaticText "继续访问"
+                uid=51_9 InlineTextBox "继续访问"

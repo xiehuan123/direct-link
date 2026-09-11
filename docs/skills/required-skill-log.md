@@ -11,6 +11,6 @@
 | `diagnosing-bugs` | `.runtime/codex-home/skills/diagnosing-bugs/SKILL.md` | WXT/Node 引擎和 npm 缓存安装失败 | 红信号、原因、隔离缓存/Node 24 修复及成功安装日志 | executed |
 | `tdd` | `.runtime/codex-home/skills/tdd/SKILL.md` | 解析器及设置模型公开接口 | 测试缝已写入规格，逐票保存 red/green 命令 | active |
 | `implement` | `.runtime/codex-home/skills/implement/SKILL.md` | 每张 ready-for-agent 子票 | 票 01 设置壳；票 02 掘金；票 03 知乎；票 04 CSDN 适配、动态链接、开关及安全失败；均构建并真实 E2E | active; tickets 01-04 executed |
-| `code-review` | `.runtime/codex-home/skills/code-review/SKILL.md` | 每票固定 Git 基线、对应规格/票 | 票 01 双审与复审；票 02 双审及修正复审；票 03 以 `977de2e` 为固定基线双轴 PASS | active; tickets 01-03 executed |
+| `code-review` | `.runtime/codex-home/skills/code-review/SKILL.md` | 每票固定 Git 基线、对应规格/票 | 票 01 双审与复审；票 02 双审及修正复审；票 03、04 均按固定基线双轴 PASS；最终候选待整合双审 | active; tickets 01-04 executed |
 
 本轮对 setup/to-spec/to-tickets 中询问步骤的适配依据：用户明确要求所有 Local Markdown 技术默认、选票和拆分由开发会话决定，不向新手重复确认。读取证据与执行产物分开记录；`.runtime/` 不提交。
