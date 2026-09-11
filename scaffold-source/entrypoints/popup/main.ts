@@ -1,9 +1,8 @@
 import './style.css';
-import { type ExtensionSettings, type PlatformId } from '@/lib/settings';
+import { PLATFORM_IDS, type ExtensionSettings } from '@/lib/settings';
 import { loadSettings, saveSettings } from '@/lib/settings-storage';
 
 const settingIds = ['enabled', 'juejin', 'zhihu', 'csdn'] as const;
-const platformIds: PlatformId[] = ['juejin', 'zhihu', 'csdn'];
 const controls = Object.fromEntries(settingIds.map((id) => [id, requireCheckbox(id)])) as Record<(typeof settingIds)[number], HTMLInputElement>;
 const status = requireElement('status');
 let currentSettings: ExtensionSettings | undefined;
@@ -51,7 +50,7 @@ async function persist(id: (typeof settingIds)[number]): Promise<void> {
 
 function render(settings: ExtensionSettings): void {
   for (const id of settingIds) controls[id].checked = settings[id];
-  for (const id of platformIds) controls[id].disabled = !settings.enabled;
+  for (const id of PLATFORM_IDS) controls[id].disabled = !settings.enabled;
 }
 
 function setControlsDisabled(disabled: boolean): void {

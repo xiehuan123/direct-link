@@ -6,7 +6,7 @@
 
 **Blocked by:** 01 — 可持久化的工具栏设置壳。
 
-**Status:** ready-for-agent
+**Status:** in-progress
 
 **Required skills:** `chrome-extensions`, `implement`, `tdd`, `code-review`, Chrome DevTools MCP
 

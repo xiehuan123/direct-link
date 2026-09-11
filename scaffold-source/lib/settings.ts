@@ -1,4 +1,5 @@
-export type PlatformId = 'juejin' | 'zhihu' | 'csdn';
+export const PLATFORM_IDS = ['juejin', 'zhihu', 'csdn'] as const;
+export type PlatformId = (typeof PLATFORM_IDS)[number];
 
 export interface ExtensionSettings {
   enabled: boolean;

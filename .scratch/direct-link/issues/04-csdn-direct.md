@@ -6,7 +6,7 @@
 
 **Blocked by:** 02 — 掘金外链安全直达。
 
-**Status:** ready-for-agent
+**Status:** blocked
 
 **Required skills:** `chrome-extensions`, `implement`, `tdd`, `code-review`, Chrome DevTools MCP
 

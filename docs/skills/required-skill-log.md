@@ -10,7 +10,7 @@
 | `chrome-extensions` | `.runtime/codex-home/skills/chrome-extensions/SKILL.md` | MV3、popup、content scripts、storage、窄化 host 权限 | 架构及产物随逐票记录更新 | active |
 | `diagnosing-bugs` | `.runtime/codex-home/skills/diagnosing-bugs/SKILL.md` | WXT/Node 引擎和 npm 缓存安装失败 | 红信号、原因、隔离缓存/Node 24 修复及成功安装日志 | executed |
 | `tdd` | `.runtime/codex-home/skills/tdd/SKILL.md` | 解析器及设置模型公开接口 | 测试缝已写入规格，逐票保存 red/green 命令 | active |
-| `implement` | `.runtime/codex-home/skills/implement/SKILL.md` | 每张 ready-for-agent 子票 | 逐票提交、检查、审查及 E2E 后更新 | pending per ticket |
-| `code-review` | `.runtime/codex-home/skills/code-review/SKILL.md` | 每票固定 Git 基线、对应规格/票 | Standards/Spec 独立报告逐票保存 | pending per ticket |
+| `implement` | `.runtime/codex-home/skills/implement/SKILL.md` | 每张 ready-for-agent 子票 | 票 01：设置壳、构建、提交、真实 E2E 和门禁 | active; ticket 01 executed |
+| `code-review` | `.runtime/codex-home/skills/code-review/SKILL.md` | 每票固定 Git 基线、对应规格/票 | 票 01：两个隔离审查，`docs/reviews/ticket-01-initial.md`；发现项已修复复验 | active; ticket 01 executed |
 
 本轮对 setup/to-spec/to-tickets 中询问步骤的适配依据：用户明确要求所有 Local Markdown 技术默认、选票和拆分由开发会话决定，不向新手重复确认。读取证据与执行产物分开记录；`.runtime/` 不提交。

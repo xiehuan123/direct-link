@@ -6,7 +6,7 @@
 
 **Blocked by:** 03 — 知乎外链安全直达；04 — CSDN 外链安全直达。
 
-**Status:** ready-for-agent
+**Status:** blocked
 
 **Required skills:** `chrome-extensions`, `implement`, `diagnosing-bugs`（仅真实失败时）, `code-review`, Chrome DevTools MCP, `browser-extension-launch` acceptance/release tools
 

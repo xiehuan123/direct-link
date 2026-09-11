@@ -7,6 +7,16 @@ export default defineConfig({
     description: '在掘金、知乎和 CSDN 的已核实外链中转地址上安全直达目标网页',
     version: '0.1.0',
     permissions: ['storage'],
+    host_permissions: [
+      'https://juejin.cn/*',
+      'https://link.juejin.cn/*',
+      'https://www.zhihu.com/*',
+      'https://zhuanlan.zhihu.com/*',
+      'https://link.zhihu.com/*',
+      'https://blog.csdn.net/*',
+      'https://www.csdn.net/*',
+      'https://link.csdn.net/*',
+    ],
     action: {
       default_title: '外链直达',
       default_icon: {

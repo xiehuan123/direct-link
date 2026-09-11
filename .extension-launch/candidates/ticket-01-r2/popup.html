@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外链直达</title>
+    <meta name="manifest.type" content="browser_action">
+    <script type="module" crossorigin src="/chunks/popup-mM0jpWxD.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/popup-DrKr06Qf.css">
+  </head>
+  <body>
+    <main class="panel" aria-labelledby="title">
+      <header class="hero">
+        <div class="brand-mark" aria-hidden="true">↗</div>
+        <div><h1 id="title">外链直达</h1><p>跳过平台自设的外链确认页</p></div>
+      </header>
+      <section class="settings" aria-label="开关设置">
+        <label class="switch-row master"><span><strong>总开关</strong><small>暂停或启用全部站点</small></span><input id="enabled" type="checkbox" role="switch"></label>
+        <div class="divider"></div>
+        <label class="switch-row"><span><strong>掘金</strong><small>juejin.cn</small></span><input id="juejin" type="checkbox" role="switch"></label>
+        <label class="switch-row"><span><strong>知乎</strong><small>zhihu.com</small></span><input id="zhihu" type="checkbox" role="switch"></label>
+        <label class="switch-row"><span><strong>CSDN</strong><small>csdn.net</small></span><input id="csdn" type="checkbox" role="switch"></label>
+      </section>
+      <p id="status" class="status" role="status" aria-live="polite">正在读取本机设置…</p>
+      <p class="privacy">设置只保存在这台电脑，不上传浏览记录。</p>
+    </main>
+  </body>
+</html>

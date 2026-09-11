@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "fingerprint_sha256": "78e38fed55d0000706169d13adc5e59573f6b1522d3e453a0f2483d6adbb4aa4",
+    "files": [
+      {"path":"assets/popup-DrKr06Qf.css","sha256":"75a44b86c8a717ce1ff1b5ccc05787e9bf2e1b7013ce936efb6b4a63d2c04067"},
+      {"path":"chunks/popup-mM0jpWxD.js","sha256":"59c3a9cec52cd356cc303645e3245deb310c500a92c5f33e5d93c9bd2ef7d963"},
+      {"path":"icon/128.png","sha256":"e74cb0f937897c972dbe670f05ea0f2d06a0ccb5b1409d2514df59a6a52c073e"},
+      {"path":"icon/16.png","sha256":"21bb190492f1c1539f07d80f0024f2357789a9834fa1685c2b1f4b84e7751bcb"},
+      {"path":"icon/32.png","sha256":"feb24b458a1ea5048ac5e9bf7588684c1f6e962a2b5a980370aa17d566d89bcb"},
+      {"path":"icon/48.png","sha256":"16c4536cdf562225aea82dd0003dbc531841f94cb4595f137e4ba09e694e552a"},
+      {"path":"icon/96.png","sha256":"c97f7ccc9e75c6446c8b66a192daff5b24fae527b1f308dc0d1da3ea24b99165"},
+      {"path":"manifest.json","sha256":"63eb9235132435c4fe3a4ef400433c30c8934c6571e90b30b3989dc237fbb888"},
+      {"path":"popup.html","sha256":"6eb73fcb9fcfe4bce5dfe334a9d2f578c13449c87924263aaa2a5f03d89e9a57"}
+    ]
+  },
+  "environment": {"automation_provider":"chrome-devtools-mcp","browser_name":"Headless Chrome","browser_version":"153.0.0.0","extension_id":"dngjcnolbpkfieojolidciegpkgkbini","installation_type":"unpacked"},
+  "browser_choice": {"default_provider":"playwright-mcp","selected_provider":"chrome-devtools-mcp","reason":"用户为隔离 CLI 明确选择了具备真实扩展安装与 action 触发能力的 Chrome DevTools MCP。","user_decision":{"status":"approved","evidence_path":"browser-choice-user-decision.md"}},
+  "required_scenarios": ["install","native_entry","primary_flow","reopen"],
+  "scenarios": [
+    {"id":"install","required":true,"status":"passed","method":"real_browser_tool","steps":["安装冻结 ticket-01-r2 候选","list_extensions 核对 ID、名称、版本","从扩展页读取实际 manifest 与 UA"],"expected":"0.1.0 候选以 unpacked 方式启用并具有 storage 与明确三站 HTTPS 权限。","actual":"外链直达 0.1.0 已启用，ID dngjcnolbpkfieojolidciegpkgkbini；运行 manifest 与冻结候选一致。","artifactPaths":["raw-browser-record.md","runtime-environment.json"]},
+    {"id":"native_entry","required":true,"status":"passed","method":"real_browser_tool","entry_kind":"native_action","steps":["trigger_extension_action","list_pages 等待实际 popup","保存 popup 初始快照"],"expected":"真实工具栏 action 打开中文设置 popup。","actual":"打开 chrome-extension://dngjcnolbpkfieojolidciegpkgkbini/popup.html，四个开关均可见。","artifactPaths":["popup-initial.txt","raw-browser-record.md"]},
+    {"id":"primary_flow","required":true,"status":"passed","method":"real_browser_tool","steps":["依次操作掘金、知乎、CSDN 开关为关闭","操作总开关为关闭","观察三站控件禁用与状态文案","再通过真实表单恢复全部开启"],"expected":"四个开关均可操作；总开关关闭会暂停并禁用分站控件；保存有可见反馈。","actual":"三个分站均成功关闭；总开关关闭后三站控件 disabled，状态为已暂停全部直达；随后全部成功恢复开启。","artifactPaths":["all-switches-off.txt","all-switches-off.png","restored-all-on.txt","restored-all-on.png","raw-browser-record.md"]},
+    {"id":"reopen","required":true,"status":"passed","method":"real_browser_tool","steps":["在 master 与三站均关闭时关闭 popup","再次通过 action 打开新 popup","核对四个持久化值和禁用状态"],"expected":"重开后 master 与三站仍为关闭，三站控件仍禁用。","actual":"新 page 5 的四个 switch 均未选中，三站 switch 均 disabled，证明 local storage 持久化。","artifactPaths":["reopened-all-off.txt","reopened-all-off.png","raw-browser-record.md"]}
+  ]
+}
