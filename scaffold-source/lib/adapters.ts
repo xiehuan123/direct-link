@@ -16,6 +16,14 @@ export const SITE_ADAPTERS: readonly SiteAdapter[] = [
   },
 ];
 
+export const REDIRECT_MATCHES = SITE_ADAPTERS.map(
+  (adapter) => `https://${adapter.redirectHost}/*`,
+);
+
+export const SOURCE_MATCHES = SITE_ADAPTERS.flatMap((adapter) =>
+  adapter.sourceHosts.map((host) => `https://${host}/*`),
+);
+
 export function adapterForRedirectHost(hostname: string): SiteAdapter | undefined {
   const normalized = hostname.toLowerCase();
   return SITE_ADAPTERS.find((adapter) => adapter.redirectHost === normalized);

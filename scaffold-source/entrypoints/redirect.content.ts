@@ -1,9 +1,10 @@
 import { resolveSupportedRedirect } from '@/lib/redirect-resolver';
+import { REDIRECT_MATCHES } from '@/lib/adapters';
 import { isPlatformEnabled } from '@/lib/settings';
 import { loadSettings } from '@/lib/settings-storage';
 
 export default defineContentScript({
-  matches: ['https://link.juejin.cn/*'],
+  matches: REDIRECT_MATCHES,
   runAt: 'document_start',
   async main() {
     const resolution = resolveSupportedRedirect(location.href);

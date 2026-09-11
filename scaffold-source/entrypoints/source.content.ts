@@ -1,16 +1,17 @@
-import { platformForSourceHost } from '@/lib/adapters';
+import { platformForSourceHost, SOURCE_MATCHES } from '@/lib/adapters';
 import { loadSettings } from '@/lib/settings-storage';
-import { directHrefForSource } from '@/lib/source-link';
+import { SourceLinkRewriter } from '@/lib/source-link';
 import { normalizeSettings, SETTINGS_KEY, type ExtensionSettings } from '@/lib/settings';
 
 const BATCH_SIZE = 40;
 
 export default defineContentScript({
-  matches: ['https://juejin.cn/*'],
+  matches: SOURCE_MATCHES,
   runAt: 'document_idle',
   async main() {
     const platform = platformForSourceHost(location.hostname);
     if (!platform) return;
+    const rewriter = new SourceLinkRewriter(platform);
 
     let settings: ExtensionSettings;
     try {
@@ -21,8 +22,7 @@ export default defineContentScript({
     }
 
     const rewrite = (anchor: HTMLAnchorElement): void => {
-      const directHref = directHrefForSource(anchor.href, platform, settings);
-      if (directHref && directHref !== anchor.href) anchor.href = directHref;
+      rewriter.apply(anchor, settings);
     };
 
     const processBatch = async (anchors: readonly HTMLAnchorElement[]): Promise<void> => {

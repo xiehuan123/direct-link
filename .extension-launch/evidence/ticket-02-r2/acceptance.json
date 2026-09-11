@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "fingerprint_sha256": "7e82edbdf13196e9466c529abc3ab70293a22d31a0363652a340ad56f8494fce",
+    "files": [
+      {"path":"assets/popup-DrKr06Qf.css","sha256":"75a44b86c8a717ce1ff1b5ccc05787e9bf2e1b7013ce936efb6b4a63d2c04067"},
+      {"path":"chunks/popup-VXmHwmBV.js","sha256":"4082475278bc2969ab1514d0714dc567774b2442bf9807f0cd51c2f37eb2ca00"},
+      {"path":"content-scripts/redirect.js","sha256":"dce197478efee6e5c8af2b8734d6bfa30681e945d600f339f9bb9ce53eddbbfa"},
+      {"path":"content-scripts/source.js","sha256":"1220e52a0e522ad87c6a1bf9ff2c72d0390311fae3946e8f247ca08d02c566c3"},
+      {"path":"icon/128.png","sha256":"e74cb0f937897c972dbe670f05ea0f2d06a0ccb5b1409d2514df59a6a52c073e"},
+      {"path":"icon/16.png","sha256":"21bb190492f1c1539f07d80f0024f2357789a9834fa1685c2b1f4b84e7751bcb"},
+      {"path":"icon/32.png","sha256":"feb24b458a1ea5048ac5e9bf7588684c1f6e962a2b5a980370aa17d566d89bcb"},
+      {"path":"icon/48.png","sha256":"16c4536cdf562225aea82dd0003dbc531841f94cb4595f137e4ba09e694e552a"},
+      {"path":"icon/96.png","sha256":"c97f7ccc9e75c6446c8b66a192daff5b24fae527b1f308dc0d1da3ea24b99165"},
+      {"path":"manifest.json","sha256":"fe13708e5d4f1544c81617f112f2d8c28196eb9561001f4d20172592d8e5028e"},
+      {"path":"popup.html","sha256":"7a42cb90ad98cfb680d54be974c750f7c835c2505570868f62148f4b56562907"}
+    ]
+  },
+  "environment": {"automation_provider":"chrome-devtools-mcp","browser_name":"Headless Chrome","browser_version":"153.0.0.0","extension_id":"jepekhngeckmnnkgjmdkdhomogikcemi","installation_type":"unpacked"},
+  "browser_choice": {"default_provider":"playwright-mcp","selected_provider":"chrome-devtools-mcp","reason":"用户明确选择本项目独立 Chrome DevTools MCP 完成真实扩展验收。","user_decision":{"status":"approved","evidence_path":"browser-choice-user-decision.md"}},
+  "required_scenarios": ["install","native_entry","primary_flow","reopen","dynamic_source","instant_restore","safe_failure"],
+  "scenarios": [
+    {"id":"install","required":true,"status":"passed","method":"real_browser_tool","steps":["安装冻结 ticket-02-r2","核对新扩展 ID","从真实 popup 读取 manifest"],"expected":"修正候选以 unpacked 方式启用。","actual":"安装成功，ID jepekhngeckmnnkgjmdkdhomogikcemi，运行 manifest 版本 0.1.0。","artifactPaths":["runtime-environment.json","raw-browser-record.md"]},
+    {"id":"native_entry","required":true,"status":"passed","method":"real_browser_tool","entry_kind":"native_action","steps":["trigger_extension_action","等待并 list_pages","保存 popup 初始快照"],"expected":"从工具栏 action 打开设置。","actual":"真实 action 打开当前扩展 popup，四开关均可见。","artifactPaths":["popup-initial.txt","raw-browser-record.md"]},
+    {"id":"primary_flow","required":true,"status":"passed","method":"real_browser_tool","steps":["启用 Juejin","访问已核实 target URL","核对最终 URL"],"expected":"直达 example.com/ticket-02-r2。","actual":"最终 URL 为 https://example.com/ticket-02-r2。","artifactPaths":["juejin-direct.txt","juejin-direct.png","raw-browser-record.md"]},
+    {"id":"reopen","required":true,"status":"passed","method":"real_browser_tool","steps":["真实 popup 关闭 master","关闭 popup","重新 action 打开新 pageId","核对状态并恢复 master"],"expected":"重开显示已暂停全部直达且状态持久化。","actual":"page 16 中 master off、站点 disabled、状态为已暂停全部直达。","artifactPaths":["popup-reopened-paused.txt","popup-reopened-paused.png","raw-browser-record.md"]},
+    {"id":"dynamic_source","required":true,"status":"passed","method":"real_browser_tool","steps":["在真实 Juejin 页 DOM 插入带 intermediary href 的新锚点","等待实际 MutationObserver","读取同一元素 href"],"expected":"动态新增锚点变为安全直链。","actual":"同一 connected 元素从 link.juejin.cn 变为 https://example.com/dynamic-fixture。","artifactPaths":["dynamic-anchor-enabled.json","raw-browser-record.md"]},
+    {"id":"instant_restore","required":true,"status":"passed","method":"real_browser_tool","steps":["保持来源页与动态锚点不重载","从 native popup 关闭 Juejin","读取同一 DOM 元素"],"expected":"关闭开关立即恢复原 intermediary href。","actual":"同一 connected 元素无需重载即恢复完整 link.juejin.cn target URL。","artifactPaths":["dynamic-anchor-restored.json","raw-browser-record.md"]},
+    {"id":"safe_failure","required":true,"status":"passed","method":"real_browser_tool","steps":["启用设置","访问 javascript: target","核对最终 URL"],"expected":"不执行恶意协议。","actual":"最终地址仍为 link.juejin.cn intermediary。","artifactPaths":["juejin-unsafe-preserved.txt","raw-browser-record.md"]}
+  ]
+}

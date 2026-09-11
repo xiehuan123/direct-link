@@ -1,0 +1,20 @@
+uid=26_0 RootWebArea "外链直达" url="chrome-extension://jepekhngeckmnnkgjmdkdhomogikcemi/popup.html"
+  uid=26_1 main "外链直达"
+    uid=26_2 heading "外链直达" level="1"
+    uid=26_3 StaticText "跳过平台自设的外链确认页"
+    uid=26_4 region "开关设置"
+      uid=26_5 StaticText "总开关"
+      uid=26_6 StaticText "暂停或启用全部站点"
+      uid=26_7 switch "总开关 暂停或启用全部站点" checked
+      uid=26_8 StaticText "掘金"
+      uid=26_9 StaticText "juejin.cn"
+      uid=26_10 switch "掘金 juejin.cn" checked
+      uid=26_11 StaticText "知乎"
+      uid=26_12 StaticText "zhihu.com"
+      uid=26_13 switch "知乎 zhihu.com" checked
+      uid=26_14 StaticText "CSDN"
+      uid=26_15 StaticText "csdn.net"
+      uid=26_16 switch "CSDN csdn.net" checked
+    uid=26_17 status atomic live="polite" relevant="additions text"
+      uid=26_18 StaticText "已启用"
+    uid=26_19 StaticText "设置只保存在这台电脑，不上传浏览记录。"

@@ -6,7 +6,7 @@
 
 **Blocked by:** 01 — 可持久化的工具栏设置壳。
 
-**Status:** in-review
+**Status:** completed
 
 **Required skills:** `chrome-extensions`, `implement`, `tdd`, `code-review`, Chrome DevTools MCP
 
@@ -22,3 +22,6 @@
 - Real Chrome: valid Juejin redirect, disabled behavior, malicious protocol preservation, actual source-page enabled/disabled comparison, and native-action reopen passed.
 - Gate: `.extension-launch/evidence/ticket-02/gate-report.json` (`gate_passed: true`, 16 artifacts).
 - Fixed point for review: `6a68886`.
+- Initial review and disposition: `docs/reviews/ticket-02-initial.md`.
+- Corrected candidate: `.extension-launch/candidates/ticket-02-r2`.
+- Corrected gate: `.extension-launch/evidence/ticket-02-r2/gate-report.json` (`gate_passed: true`).

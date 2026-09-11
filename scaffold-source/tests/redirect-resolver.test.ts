@@ -3,7 +3,7 @@ import test from 'node:test';
 
 import { resolveSupportedRedirect } from '../lib/redirect-resolver.ts';
 import { DEFAULT_SETTINGS } from '../lib/settings.ts';
-import { directHrefForSource } from '../lib/source-link.ts';
+import { SourceLinkRewriter, directHrefForSource } from '../lib/source-link.ts';
 
 const destination = 'https://example.com/docs?q=one%20two#part';
 const juejinRedirect = `https://link.juejin.cn/?target=${encodeURIComponent(destination)}`;
@@ -41,6 +41,14 @@ test('preserves original behavior for unsafe or unsupported inputs', () => {
   for (const value of rejected) assert.equal(resolveSupportedRedirect(value), null, value);
 });
 
+test('rejects a destination value over the 8192-character limit', () => {
+  const oversized = `https://example.com/${'a'.repeat(8193)}`;
+  assert.equal(
+    resolveSupportedRedirect(`https://link.juejin.cn/?target=${encodeURIComponent(oversized)}`),
+    null,
+  );
+});
+
 test('rejects same-address loops and nesting beyond three supported hops', () => {
   const self = 'https://link.juejin.cn/?target=https%3A%2F%2Flink.juejin.cn%2F';
   assert.equal(resolveSupportedRedirect(self), null);
@@ -57,4 +65,20 @@ test('source-page decision requires matching platform and enabled switches', () 
   assert.equal(directHrefForSource(juejinRedirect, 'zhihu', { ...DEFAULT_SETTINGS }), null);
   assert.equal(directHrefForSource(juejinRedirect, 'juejin', { ...DEFAULT_SETTINGS, juejin: false }), null);
   assert.equal(directHrefForSource(juejinRedirect, 'juejin', { ...DEFAULT_SETTINGS, enabled: false }), null);
+});
+
+test('source-page rewriter restores the original intermediary when disabled', () => {
+  const rewriter = new SourceLinkRewriter('juejin');
+  const existing = { href: juejinRedirect };
+  const dynamicallyAdded = { href: juejinRedirect };
+
+  rewriter.apply(existing, { ...DEFAULT_SETTINGS });
+  rewriter.apply(dynamicallyAdded, { ...DEFAULT_SETTINGS });
+  assert.equal(existing.href, destination);
+  assert.equal(dynamicallyAdded.href, destination);
+
+  rewriter.apply(existing, { ...DEFAULT_SETTINGS, juejin: false });
+  rewriter.apply(dynamicallyAdded, { ...DEFAULT_SETTINGS, enabled: false });
+  assert.equal(existing.href, juejinRedirect);
+  assert.equal(dynamicallyAdded.href, juejinRedirect);
 });
